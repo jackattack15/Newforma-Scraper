@@ -96,6 +96,7 @@ def pullup_rfi(rfi, row):
 	#looks to see if the RFI we searched for actually exists.
 	if check_exists_by_link('RFI-0' + search_rfi):	
 		current_rfi = driver.find_element_by_partial_link_text('RFI-0' + search_rfi)
+
 		time.sleep(1)
 		current_rfi.click()		#If it does, we open it up by clicking the link.
 	
