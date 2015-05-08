@@ -96,14 +96,19 @@ def pullup_rfi(rfi, row):
 	#looks to see if the RFI we searched for actually exists.
 	if check_exists_by_link('RFI-0' + search_rfi):	
 		current_rfi = driver.find_element_by_partial_link_text('RFI-0' + search_rfi)
-
 		time.sleep(1)
 		current_rfi.click()		#If it does, we open it up by clicking the link.
+	elif check_exists_by_link('RFI-' + search_rfi):
+                current_rfi = driver.find_element_by_partial_link_text('RFI-' + search_rfi)
+                time.sleep(1)
+                current_rfi.click()		#If it does, we open it up by clicking the link.
+
 	
 	sheet1.write(row, 0, search_rfi)	#Writes the RFI Number onto the Excel Sheet
 
 #Checks to see if the RFI has a 'Response' attachment.  If it does, it downloads it.
 def download_attachments():
+        time.sleep(1)
 	if check_exists_by_link('Response'):
 		download = driver.find_element_by_partial_link_text('Response')
 		download.click()
