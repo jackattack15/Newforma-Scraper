@@ -16,11 +16,11 @@ ending_rfi = input("Please enter ending rfi number: ")
 
 for rfi in range(starting_rfi, ending_rfi + 1):
 	current_rfi = str(rfi)
-	source = "C:/Users/gsavage/Downloads/RFI_0" + current_rfi + "-00_Response.pdf"
 	print("RFI: " + current_rfi)
 #	print("Source: " + source)	#Show user source 
-	if (os.path.isfile(source)):
-		print ("There is an attachment: " + str(os.path.isfile(source)))
+	if (os.path.isfile("C:/Users/gsavage/Downloads/RFI_0" + current_rfi + "-00_Response.pdf")):
+		print ("There is an attachment: " + str(os.path.isfile("C:/Users/gsavage/Downloads/RFI_0" + current_rfi + "-00_Response.pdf")))
+		source = "C:/Users/gsavage/Downloads/RFI_0" + current_rfi + "-00_Response.pdf"
 		destination = os.path.join("C:/Users/gsavage/Desktop/RFI_Downloads/", current_rfi)
 #		print("Destination: " + destination)
 		try:
@@ -32,8 +32,38 @@ for rfi in range(starting_rfi, ending_rfi + 1):
 		except shutil.Error:
 			print ("Response " + current_rfi + " Already Stored")
 
+	elif (os.path.isfile("C:/Users/gsavage/Downloads/RFI_0" + current_rfi + "_00_Response.pdf")):
+		print ("There is an attachment: " + str(os.path.isfile("C:/Users/gsavage/Downloads/RFI_0" + current_rfi + "_00_Response.pdf")))
+		source = "C:/Users/gsavage/Downloads/RFI_0" + current_rfi + "_00_Response.pdf"
+		destination = os.path.join("C:/Users/gsavage/Desktop/RFI_Downloads/", current_rfi)
+#		print("Destination: " + destination)
+		try:
+			os.makedirs(destination)
+		except OSError:
+			print ("Folder " + current_rfi + " Already Exists")
+		try:
+			shutil.move(source, destination)
+		except shutil.Error:
+			print ("Response " + current_rfi + " Already Stored")
+
+
 	elif (os.path.isfile("C:/Users/gsavage/Downloads/RFI_" + current_rfi + "_PJF_Response.pdf")):
 		print ("There is an attachment: " + str(os.path.isfile("C:/Users/gsavage/Downloads/RFI_" + current_rfi + "_PJF_Response.pdf")))
+		source = "C:/Users/gsavage/Downloads/RFI_" + current_rfi + "_PJF_Response.pdf" 
+		destination = os.path.join("C:/Users/gsavage/Desktop/RFI_Downloads/", current_rfi)
+#		print("Destination: " + destination)
+		try:
+			os.makedirs(destination)
+		except OSError:
+			print ("Folder " + current_rfi + " Already Exists")
+		try:
+			shutil.move(source, destination)
+		except shutil.Error:
+			print ("Response " + current_rfi + " Already Stored")
+
+	elif (os.path.isfile("C:/Users/gsavage/Downloads/RFI-" + current_rfi + "_PJF_Response.pdf")):
+		print ("There is an attachment: " + str(os.path.isfile("C:/Users/gsavage/Downloads/RFI-" + current_rfi + "_PJF_Response.pdf")))
+		source = "C:/Users/gsavage/Downloads/RFI-" + current_rfi + "_PJF_Response.pdf" 
 		destination = os.path.join("C:/Users/gsavage/Desktop/RFI_Downloads/", current_rfi)
 #		print("Destination: " + destination)
 		try:
@@ -45,8 +75,37 @@ for rfi in range(starting_rfi, ending_rfi + 1):
 		except shutil.Error:
 			print ("Response " + current_rfi + " Already Stored")
 	
+	elif (os.path.isfile("C:/Users/gsavage/Downloads/RFI_0" + current_rfi + "_PJF_Response.pdf")):
+		print ("There is an attachment: " + str(os.path.isfile("C:/Users/gsavage/Downloads/RFI_0" + current_rfi + "_PJF_Response.pdf")))
+		source ="C:/Users/gsavage/Downloads/RFI_0" + current_rfi + "_PJF_Response.pdf" 
+		destination = os.path.join("C:/Users/gsavage/Desktop/RFI_Downloads/", current_rfi)
+#		print("Destination: " + destination)
+		try:
+			os.makedirs(destination)
+		except OSError:
+			print ("Folder " + current_rfi + " Already Exists")
+		try:
+			shutil.move(source, destination)
+		except shutil.Error:
+			print ("Response " + current_rfi + " Already Stored")
+	
+	elif (os.path.isfile("C:/Users/gsavage/Downloads/RFI_" + current_rfi + "_Sketch-PJF_Response.pdf")):
+		print ("There is an attachment: " + str(os.path.isfile("C:/Users/gsavage/Downloads/RFI_" + current_rfi + "_Sketch-PJF_Response.pdf")))
+		source ="C:/Users/gsavage/Downloads/RFI_" + current_rfi + "_Sketch-PJF_Response.pdf" 
+		destination = os.path.join("C:/Users/gsavage/Desktop/RFI_Downloads/", current_rfi)
+#		print("Destination: " + destination)
+		try:
+			os.makedirs(destination)
+		except OSError:
+			print ("Folder " + current_rfi + " Already Exists")
+		try:
+			shutil.move(source, destination)
+		except shutil.Error:
+			print ("Response " + current_rfi + " Already Stored")
+
 	elif (os.path.isfile("C:/Users/gsavage/Downloads/RFI_" + current_rfi + "_HKS_Response.pdf")):
 		print ("There is an attachment: " + str(os.path.isfile("C:/Users/gsavage/Downloads/RFI_" + current_rfi + "_HKS_Response.pdf")))
+		source ="C:/Users/gsavage/Downloads/RFI_" + current_rfi + "_HKS_Response.pdf" 
 		destination = os.path.join("C:/Users/gsavage/Desktop/RFI_Downloads/", current_rfi)
 #		print("Destination: " + destination)
 		try:
@@ -60,6 +119,35 @@ for rfi in range(starting_rfi, ending_rfi + 1):
 	
 	elif (os.path.isfile("C:/Users/gsavage/Downloads/RFI_" + current_rfi + "_Response.pdf")):
 		print ("There is an attachment: " + str(os.path.isfile("C:/Users/gsavage/Downloads/RFI_" + current_rfi + "_Response.pdf")))
+		source = "C:/Users/gsavage/Downloads/RFI_" + current_rfi + "_Response.pdf"
+		destination = os.path.join("C:/Users/gsavage/Desktop/RFI_Downloads/", current_rfi)
+#		print("Destination: " + destination)
+		try:
+			os.makedirs(destination)
+		except OSError:
+			print ("Folder " + current_rfi + " Already Exists")
+		try:
+			shutil.move(source, destination)
+		except shutil.Error:
+			print ("Response " + current_rfi + " Already Stored")	
+
+	elif (os.path.isfile("C:/Users/gsavage/Downloads/RFI-" + current_rfi + "_Response.pdf")):
+		print ("There is an attachment: " + str(os.path.isfile("C:/Users/gsavage/Downloads/RFI-" + current_rfi + "_Response.pdf")))
+		source = "C:/Users/gsavage/Downloads/RFI-" + current_rfi + "_Response.pdf"
+		destination = os.path.join("C:/Users/gsavage/Desktop/RFI_Downloads/", current_rfi)
+#		print("Destination: " + destination)
+		try:
+			os.makedirs(destination)
+		except OSError:
+			print ("Folder " + current_rfi + " Already Exists")
+		try:
+			shutil.move(source, destination)
+		except shutil.Error:
+			print ("Response " + current_rfi + " Already Stored")	
+
+	elif (os.path.isfile("C:/Users/gsavage/Downloads/RFI_0" + current_rfi + "_Response.pdf")):
+		print ("There is an attachment: " + str(os.path.isfile("C:/Users/gsavage/Downloads/RFI_0" + current_rfi + "_Response.pdf")))
+		source = "C:/Users/gsavage/Downloads/RFI_0" + current_rfi + "_Response.pdf"
 		destination = os.path.join("C:/Users/gsavage/Desktop/RFI_Downloads/", current_rfi)
 #		print("Destination: " + destination)
 		try:
